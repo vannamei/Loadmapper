@@ -1,0 +1,57 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./resource",
+    "outDir": "public",
+    "target": "ES2020",
+    "module": "ES2020",
+    "moduleResolution": "Node",
+    "lib": [
+      "DOM",
+      "ES2020"
+    ],
+    "paths": {
+      "@": [
+        "./*"
+      ],
+      "@scss": [
+        "scss/*"
+      ],
+      "@ts": [
+        "ts/*"
+      ],
+      "@img": [
+        "img/*"
+      ]
+    },
+    "jsx": "react-jsx",
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+    "strict": true,
+    "noUnusedLocals": true,
+    "noImplicitReturns": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "allowJs": true,
+    "checkJs": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "downlevelIteration": true
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  },
+  "include": [
+    "resources/**/*",
+    "tests/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
