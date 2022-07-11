@@ -1,18 +1,15 @@
-import { FC } from 'react'
+import { FC } from "react";
+import { RecoilRoot } from "recoil";
+import { Router } from "./router/Router";
+import { ThemeProvider } from "@mui/material/styles";
+import { theme } from "./theme/theme";
 
-import { ThemeProvider } from '@mui/material/styles'
-import { RecoilRoot } from "recoil"
-import Router from './Router'
-import theme from './Theme'
-
-const App: FC = () => {
+export const App: FC = () => {
   return (
     <ThemeProvider theme={theme}>
       <RecoilRoot>
         <Router />
       </RecoilRoot>
     </ThemeProvider>
-  )
-}
-
-export default App
+  );
+};

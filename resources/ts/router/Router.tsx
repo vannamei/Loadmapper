@@ -1,17 +1,17 @@
-import { FC } from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { FC } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import DefaultLayout from './components/templates/DefaultLayout'
-import Home from './components/pages/Home'
-import Login from './components/pages/Login'
-import Register from './components/pages/Register'
-import LoadmapCreate from './components/pages/LoadmapCreate'
-import LoadmapDetail from './components/pages/LoadmapDetail'
-import Loadmaps from './components/pages/Loadmaps'
-import Manage from './components/pages/Manage'
-import NotFound from './components/pages/NotFound'
+import { DefaultLayout } from "../components/templates/DefaultLayout";
+import { Home } from "../components/pages/Home";
+import { Login } from "../components/pages/Login";
+import { Register } from "../components/pages/Register";
+import { LoadmapCreate } from "../components/pages/LoadmapCreate";
+import { LoadmapDetail } from "../components/pages/LoadmapDetail";
+import { Loadmaps } from "../components/pages/Loadmaps";
+import { Manage } from "../components/pages/Manage";
+import { NotFound } from "../components/pages/NotFound";
 
-const Router: FC = () => {
+export const Router: FC = () => {
   return (
     <BrowserRouter>
       <Routes>
@@ -29,7 +29,5 @@ const Router: FC = () => {
         </Route>
       </Routes>
     </BrowserRouter>
-  )
-}
-
-export default Router
+  );
+};

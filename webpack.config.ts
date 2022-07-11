@@ -42,7 +42,14 @@ const config: Configuration = {
             loader: "postcss-loader",
             options: {
               postcssOptions: {
-                plugins: [["autoprefixer", { grid: true }]],
+                plugins: [
+                  [
+                    "autoprefixer",
+                    {
+                      grid: true,
+                    },
+                  ],
+                ],
               },
             },
           },

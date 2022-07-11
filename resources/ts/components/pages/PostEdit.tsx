@@ -1,50 +1,50 @@
-import { useState, useEffect, FC } from 'react'
-import { useParams } from 'react-router-dom'
-import { Card } from '@mui/material'
-import Axios from 'axios'
-import PostForm from '../components/PostForm'
+import { useState, useEffect, FC } from "react";
+import { useParams } from "react-router-dom";
+import { Axios } from "axios";
+import { PostForm } from "../components/PostForm";
+import { Card } from "@mui/material";
 
-const PostEdit: FC = () => {
-  const { id } = useParams()
+export const PostEdit: FC = () => {
+  const { id } = useParams();
 
-  const [editData, setEditData] = useState({ name: '', content: '' })
+  const [editData, setEditData] = useState({ name: "", content: "" });
 
   useEffect(() => {
-    getEditData()
-  }, [])
+    getEditData();
+  }, []);
   const getEditData = async () => {
-    await Axios.post('/api/edit', {
+    await Axios.post("/api/edit", {
       id: id,
     })
       .then((response) => {
-        setEditData(response.data)
+        setEditData(response.data);
       })
       .catch(() => {
-        console.log('通信失敗...')
-      })
-  }
+        console.log("通信失敗...");
+      });
+  };
 
   const updatePost = async () => {
-    await Axios.post('/api/update', {
+    await Axios.post("/api/update", {
       id: id,
       name: editData.name,
       content: editData.content,
     })
       .then((response) => {
-        setEditData(response.data)
+        setEditData(response.data);
       })
       .catch((e) => {
-        console.log(e)
-      })
-  }
+        console.log(e);
+      });
+  };
 
   const inputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const key = e.target.name
-    const value = e.target.value
-    editData[key] = value
-    let data = Object.assign({}, editData)
-    setEditData(data)
-  }
+    const key = e.target.name;
+    const value = e.target.value;
+    editData[key] = value;
+    let data = Object.assign({}, editData);
+    setEditData(data);
+  };
 
   return (
     <div className="container">
@@ -53,13 +53,15 @@ const PostEdit: FC = () => {
           <div className="card">
             <h1>タスク編集</h1>
             <Card>
-              <PostForm data={editData} btnFunc={updatePost} inputChange={inputChange} />
+              <PostForm
+                data={editData}
+                btnFunc={updatePost}
+                inputChange={inputChange}
+              />
             </Card>
           </div>
         </div>
       </div>
     </div>
-  )
-}
-
-export default PostEdit
+  );
+};

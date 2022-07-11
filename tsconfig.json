@@ -24,7 +24,7 @@
       ]
     },
     "jsx": "react-jsx",
-    "jsxImportResource": "@emotion/react",
+    "jsxImportSource": "@emotion/react",
     "sourceMap": true,
     "declaration": true,
     "declarationMap": true,

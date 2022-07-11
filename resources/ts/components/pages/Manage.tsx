@@ -1,21 +1,22 @@
-import { FC } from 'react'
-import { Link } from 'react-router-dom'
-import { styled } from '@mui/material/styles'
-import Card from '@mui/material/Card'
-import Button from '@mui/material/Button'
-import Typography from '@mui/material/Typography'
-import Container from '@mui/material/Container'
-import Paper from '@mui/material/Paper'
-import Stack from '@mui/material/Stack'
-import Avatar from '@mui/material/Avatar'
+import { FC } from "react";
+import { Link } from "react-router-dom";
+import { styled } from "@mui/material/styles";
+import {
+  Container,
+  Stack,
+  Paper,
+  Card,
+  Typography,
+  Avatar,
+} from "@mui/material";
 
 const Tag = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
   ...theme.typography.body2,
   padding: theme.spacing(1),
-  textAlign: 'center',
+  textAlign: "center",
   color: theme.palette.text.secondary,
-}))
+}));
 
 //-- ToDo: axiosでLaravelのAPIを叩いてデータを取得
 //-- 投稿日時降順
@@ -26,7 +27,7 @@ const recents = [
     iconSrc: "",
     author: "伊沢圭＠フリーランスエンジニア",
     tags: ["IT", "プログラミング"],
-    created_at: 1
+    created_at: 1,
   },
   {
     id: 2,
@@ -34,7 +35,7 @@ const recents = [
     iconSrc: "",
     author: "伊沢圭＠フリーランスエンジニア",
     tags: ["IT", "プログラミング"],
-    created_at: 2
+    created_at: 2,
   },
   {
     id: 3,
@@ -42,7 +43,7 @@ const recents = [
     iconSrc: "",
     author: "伊沢圭＠フリーランスエンジニア",
     tags: ["IT", "プログラミング", "デザイン"],
-    created_at: 3
+    created_at: 3,
   },
   {
     id: 4,
@@ -50,7 +51,7 @@ const recents = [
     iconSrc: "",
     author: "かずち",
     tags: ["語学", "英語", "資格"],
-    created_at: 4
+    created_at: 4,
   },
   {
     id: 5,
@@ -58,38 +59,50 @@ const recents = [
     iconSrc: "",
     author: "ばなめい",
     tags: ["タイピング"],
-    created_at: 5
+    created_at: 5,
   },
-]
+];
 
-const Manage: FC = () => {
+export const Manage: FC = () => {
   return (
     <Container maxWidth="lg" sx={{ my: 10 }}>
-      <Paper sx={{ p: 3, display: 'flex', flexDirection: 'column', backgroundColor: '#f7fffc' }}>
-        <Typography component="h2" variant="h4" sx={{ mb: 2, fontSize: '28px', fontWeight: 'bold' }}>
-        </Typography>
+      <Paper
+        sx={{
+          p: 3,
+          display: "flex",
+          flexDirection: "column",
+          backgroundColor: "#f7fffc",
+        }}
+      >
+        <Typography
+          component="h2"
+          variant="h4"
+          sx={{ mb: 2, fontSize: "28px", fontWeight: "bold" }}
+        ></Typography>
         {recents.map((recent) => (
           <Link to={"/loadmaps/" + recent.id} key={recent.id}>
             <Card sx={{ px: 2, py: 3, mb: 2 }}>
               <Typography component="h3" variant="h6" sx={{ mb: 1 }}>
                 {recent.title}
               </Typography>
-              <Stack direction="row" alignItems="center" spacing={1} sx={{ mb: 1 }}>
+              <Stack
+                direction="row"
+                alignItems="center"
+                spacing={1}
+                sx={{ mb: 1 }}
+              >
                 <Avatar alt="selenium" src={recent.iconSrc} sx={{ mr: 1 }} />
                 {recent.author}
               </Stack>
               <Stack direction="row" spacing={1}>
-                {recent.tags.map((tag) =>
-                  (<Tag>{tag}</Tag>)
-                )}
+                {recent.tags.map((tag) => (
+                  <Tag>{tag}</Tag>
+                ))}
               </Stack>
             </Card>
           </Link>
-        )
-        )}
+        ))}
       </Paper>
     </Container>
-  )
-}
-
-export default Manage
+  );
+};
