@@ -1,28 +1,30 @@
-import { FC } from 'react'
-import Avatar from '@mui/material/Avatar'
-import Button from '@mui/material/Button'
-import TextField from '@mui/material/TextField'
-import FormControlLabel from '@mui/material/FormControlLabel'
-import Checkbox from '@mui/material/Checkbox'
-import { Link } from 'react-router-dom'
-import Grid from '@mui/material/Grid'
-import Box from '@mui/material/Box'
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined'
-import Typography from '@mui/material/Typography'
-import Container from '@mui/material/Container'
+import { FC } from "react";
+import { Link } from "react-router-dom";
+import {
+  Container,
+  Grid,
+  Box,
+  Typography,
+  Button,
+  TextField,
+  FormControlLabel,
+  Checkbox,
+  Avatar,
+} from "@mui/material";
+import { LockOutlined as LockOutlinedIcon } from "@mui/icons-material";
 
-const Login: FC = () => {
+export const Login: FC = () => {
   return (
     <Container maxWidth="xs">
       <Box
         sx={{
           marginTop: 8,
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
         }}
       >
-        <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+        <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
@@ -53,7 +55,12 @@ const Login: FC = () => {
             control={<Checkbox value="remember" color="primary" />}
             label="ログイン状態を保持する"
           />
-          <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
+          <Button
+            type="submit"
+            fullWidth
+            variant="contained"
+            sx={{ mt: 3, mb: 2 }}
+          >
             ログイン
           </Button>
           <Grid container>
@@ -67,7 +74,5 @@ const Login: FC = () => {
         </Box>
       </Box>
     </Container>
-  )
-}
-
-export default Login
+  );
+};

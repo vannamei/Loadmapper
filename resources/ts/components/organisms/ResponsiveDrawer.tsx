@@ -1,28 +1,23 @@
-import { memo, FC } from 'react'
+import { memo, FC } from "react";
+import { styled } from "@mui/material/styles";
+import { Box, Drawer, Divider, Toolbar, List } from "@mui/material";
 
-import { mainListItems, secondaryListItems } from '../molecules/ListItems'
-
-import { styled } from '@mui/material/styles'
-import Box from '@mui/material/Box'
-import Drawer from '@mui/material/Drawer'
-import Divider from '@mui/material/Divider'
-import Toolbar from '@mui/material/Toolbar'
-import List from '@mui/material/List'
-import ScrollToTopOnMount from '../../libs/ScrollToTopOnMount'
+import { mainListItems, secondaryListItems } from "../molecules/ListItems";
+import { ScrollToTopOnMount } from "../../libs/ScrollToTopOnMount";
 
 type Props = {
-  drawerWidth: number
-  container: any
-  isVisibleDrawer: boolean
-  handleDrawerToggle: () => void
-}
+  drawerWidth: number;
+  container: any;
+  isVisibleDrawer: boolean;
+  handleDrawerToggle: () => void;
+};
 
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
   backgroundColor: theme.palette.primary.main,
-}))
+}));
 
-const ResponsiveDrawer: FC<Props> = memo((props) => {
-  const { drawerWidth, container, isVisibleDrawer, handleDrawerToggle } = props
+export const ResponsiveDrawer: FC<Props> = memo((props) => {
+  const { drawerWidth, container, isVisibleDrawer, handleDrawerToggle } = props;
 
   const drawer = (
     <div>
@@ -34,7 +29,7 @@ const ResponsiveDrawer: FC<Props> = memo((props) => {
         {secondaryListItems}
       </List>
     </div>
-  )
+  );
 
   return (
     <>
@@ -53,8 +48,11 @@ const ResponsiveDrawer: FC<Props> = memo((props) => {
             keepMounted: true,
           }}
           sx={{
-            display: { xs: 'block', md: 'none' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+            display: { xs: "block", md: "none" },
+            "& .MuiDrawer-paper": {
+              boxSizing: "border-box",
+              width: drawerWidth,
+            },
           }}
         >
           {drawer}
@@ -62,8 +60,11 @@ const ResponsiveDrawer: FC<Props> = memo((props) => {
         <Drawer
           variant="permanent"
           sx={{
-            display: { xs: 'none', md: 'block' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+            display: { xs: "none", md: "block" },
+            "& .MuiDrawer-paper": {
+              boxSizing: "border-box",
+              width: drawerWidth,
+            },
           }}
           open
         >
@@ -71,7 +72,5 @@ const ResponsiveDrawer: FC<Props> = memo((props) => {
         </Drawer>
       </Box>
     </>
-  )
-})
-
-export default ResponsiveDrawer
+  );
+});

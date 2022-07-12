@@ -1,20 +1,18 @@
-import { FC } from 'react'
-import { Link } from 'react-router-dom'
+import { FC } from "react";
+import { Link } from "react-router-dom";
 
-import AppBar from '@mui/material/AppBar'
-import MenuIcon from '@mui/icons-material/Menu'
-import IconButton from '@mui/material/IconButton'
-import Toolbar from '@mui/material/Toolbar'
+import { AppBar, IconButton, Toolbar } from "@mui/material";
+import { Menu as MenuIcon } from "@mui/icons-material";
 
-import LogoImg from '@img/loadmappers_logo.svg'
+import LogoImg from "@img/loadmappers_logo.svg";
 
 type Props = {
-  drawerWidth: number
-  handleDrawerToggle: () => void
-}
+  drawerWidth: number;
+  handleDrawerToggle: () => void;
+};
 
-const Header: FC<Props> = (props) => {
-  const { drawerWidth, handleDrawerToggle } = props
+export const Header: FC<Props> = (props) => {
+  const { drawerWidth, handleDrawerToggle } = props;
 
   return (
     <AppBar
@@ -24,7 +22,7 @@ const Header: FC<Props> = (props) => {
         ml: { md: `${drawerWidth}px` },
       }}
     >
-      <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
+      <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
         <Link to="/">
           <img height="26px" src={LogoImg} alt="loadmappers" />
         </Link>
@@ -33,13 +31,11 @@ const Header: FC<Props> = (props) => {
           aria-label="open drawer"
           edge="start"
           onClick={handleDrawerToggle}
-          sx={{ mr: 2, display: { md: 'none' } }}
+          sx={{ mr: 2, display: { md: "none" } }}
         >
           <MenuIcon />
         </IconButton>
       </Toolbar>
     </AppBar>
-  )
-}
-
-export default Header
+  );
+};

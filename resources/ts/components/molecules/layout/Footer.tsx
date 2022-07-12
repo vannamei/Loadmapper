@@ -1,21 +1,24 @@
-import { FC } from 'react'
-import Typography from '@mui/material/Typography'
+import { FC } from "react";
+import { Typography } from "@mui/material";
 
-const Copyright = (props: any) => {
+const Copyright: FC = () => {
   return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {'Copyright © '}
+    <Typography
+      variant="body2"
+      color="text.secondary"
+      align="center"
+      sx={{ mt: 8, mb: 4 }}
+    >
+      {"Copyright © "}
       Vannamei {new Date().getFullYear()}
     </Typography>
-  )
-}
+  );
+};
 
-const Footer: FC = () => {
+export const Footer: FC = () => {
   return (
     <footer>
-      <Copyright sx={{ mt: 8, mb: 4 }} />
+      <Copyright />
     </footer>
-  )
-}
-
-export default Footer
+  );
+};

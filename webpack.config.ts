@@ -42,7 +42,14 @@ const config: Configuration = {
             loader: "postcss-loader",
             options: {
               postcssOptions: {
-                plugins: [["autoprefixer", { grid: true }]],
+                plugins: [
+                  [
+                    "autoprefixer",
+                    {
+                      grid: true,
+                    },
+                  ],
+                ],
               },
             },
           },
@@ -81,7 +88,16 @@ const config: Configuration = {
       "@scss": path.resolve(__dirname, "./resources/scss"),
       "@img": path.resolve(__dirname, "./resources/img"),
     },
-    extensions: [".js", ".jsx", ".ts", ".tsx", ".json", ".scss", ".sass", ".css"],
+    extensions: [
+      ".js",
+      ".jsx",
+      ".ts",
+      ".tsx",
+      ".json",
+      ".scss",
+      ".sass",
+      ".css",
+    ],
   },
   target: isDev ? "web" : ["web", "es5"],
   devtool: isDev ? "inline-source-map" : undefined,

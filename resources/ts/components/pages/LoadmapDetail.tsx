@@ -1,25 +1,27 @@
-import { useState, useEffect, FC } from 'react'
-import { useParams } from 'react-router-dom'
-import { styled } from '@mui/material/styles'
-import Container from '@mui/material/Container'
-import Stack from '@mui/material/Stack'
-import Paper from '@mui/material/Paper'
-import Card from '@mui/material/Card'
-import Typography from '@mui/material/Typography'
-import Avatar from '@mui/material/Avatar'
+import { FC } from "react";
+// import { useParams } from "react-router-dom";
+import { styled } from "@mui/material/styles";
+import {
+  Container,
+  Stack,
+  Paper,
+  Card,
+  Typography,
+  Avatar,
+} from "@mui/material";
 
 const Tag = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
   ...theme.typography.body2,
   padding: theme.spacing(1),
-  textAlign: 'center',
+  textAlign: "center",
   color: theme.palette.text.secondary,
-}))
+}));
 
-const LoadmapDetail: FC = () => {
+export const LoadmapDetail: FC = () => {
   return (
     <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-      <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
+      <Paper sx={{ p: 2, display: "flex", flexDirection: "column" }}>
         <Typography component="h2" variant="h5" sx={{ mb: 1 }}>
           e-typingでWPM400(Professor)に到達するまでにやったこと
         </Typography>
@@ -30,12 +32,16 @@ const LoadmapDetail: FC = () => {
         <Stack direction="row" spacing={1} sx={{ mb: 1 }}>
           <Tag>タイピング</Tag>
         </Stack>
-        <p>タイピング速度向上の為の練習法をステップバイステップ形式で紹介します。</p>
+        <p>
+          タイピング速度向上の為の練習法をステップバイステップ形式で紹介します。
+        </p>
         <Card sx={{ px: 2, py: 3, mb: 2 }}>
           <Typography component="h3" variant="h6">
             【STEP1】タッチタイピングを身に付ける
           </Typography>
-          <p>まずはキーボードを見ずにタイピング出来るように、キーの配置と指使いを覚えます。</p>
+          <p>
+            まずはキーボードを見ずにタイピング出来るように、キーの配置と指使いを覚えます。
+          </p>
         </Card>
         <Card sx={{ px: 2, py: 3, mb: 2 }}>
           <Typography component="h3" variant="h6">
@@ -52,12 +58,12 @@ const LoadmapDetail: FC = () => {
         <Card sx={{ px: 2, py: 3, mb: 2 }}>
           <Typography component="h3" variant="h6">
             【STEP4】効率の良いキー入力を身に付ける
-          </Typography>
-          <p>「ん」の入力を[xn]とすると、ミスタイプの数がかなり減ると思います。</p>
+          </Typography>{" "}
+          <p>
+            「ん」の入力を[xn]とすると、ミスタイプの数がかなり減ると思います。
+          </p>
         </Card>
       </Paper>
     </Container>
-  )
-}
-
-export default LoadmapDetail
+  );
+};

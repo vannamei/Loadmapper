@@ -1,16 +1,16 @@
-import { Link } from 'react-router-dom'
-import ListItemButton from '@mui/material/ListItemButton'
-import ListItemIcon from '@mui/material/ListItemIcon'
-import ListItemText from '@mui/material/ListItemText'
-import HomeIcon from '@mui/icons-material/Home'
-import PlaylistAddIcon from '@mui/icons-material/PlaylistAdd'
-import HelpIcon from '@mui/icons-material/Help'
-import StarIcon from '@mui/icons-material/Star'
-import ListIcon from '@mui/icons-material/List'
-import SettingsIcon from '@mui/icons-material/Settings'
-import SearchIcon from '@mui/icons-material/Search'
+import { Link } from "react-router-dom";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
+import HomeIcon from "@mui/icons-material/Home";
+import PlaylistAddIcon from "@mui/icons-material/PlaylistAdd";
+import HelpIcon from "@mui/icons-material/Help";
+import StarIcon from "@mui/icons-material/Star";
+import ListIcon from "@mui/icons-material/List";
+import SettingsIcon from "@mui/icons-material/Settings";
+import SearchIcon from "@mui/icons-material/Search";
 // import LoginIcon from '@mui/icons-material/Login';
-import LogoutIcon from '@mui/icons-material/Logout'
+import LogoutIcon from "@mui/icons-material/Logout";
 
 export const mainListItems = (
   <>
@@ -55,7 +55,7 @@ export const mainListItems = (
       </ListItemButton>
     </Link>
   </>
-)
+);
 
 export const secondaryListItems = (
   <>
@@ -84,4 +84,4 @@ export const secondaryListItems = (
       </ListItemButton>
     </Link>
   </>
-)
+);

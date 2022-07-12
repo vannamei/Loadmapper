@@ -3,6 +3,8 @@
 /public/storage
 /public/js
 /public/css
+/public/**/*.d.ts
+/public/**/*.d.ts.map
 /storage/*.key
 /vendor
 .env
