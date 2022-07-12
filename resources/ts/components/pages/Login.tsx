@@ -11,9 +11,9 @@ import {
   Checkbox,
   Avatar,
 } from "@mui/material";
-import { LockOutlined as LockOutlinedIcon}  from "@mui/icons-material";
+import { LockOutlined as LockOutlinedIcon } from "@mui/icons-material";
 
-const Login: FC = () => {
+export const Login: FC = () => {
   return (
     <Container maxWidth="xs">
       <Box
@@ -76,5 +76,3 @@ const Login: FC = () => {
     </Container>
   );
 };
-
-export default Login;

@@ -3,7 +3,12 @@ import { Typography } from "@mui/material";
 
 const Copyright: FC = () => {
   return (
-    <Typography variant="body2" color="text.secondary" align="center">
+    <Typography
+      variant="body2"
+      color="text.secondary"
+      align="center"
+      sx={{ mt: 8, mb: 4 }}
+    >
       {"Copyright © "}
       Vannamei {new Date().getFullYear()}
     </Typography>
@@ -13,7 +18,7 @@ const Copyright: FC = () => {
 export const Footer: FC = () => {
   return (
     <footer>
-      <Copyright sx={{ mt: 8, mb: 4 }} />
+      <Copyright />
     </footer>
   );
 };

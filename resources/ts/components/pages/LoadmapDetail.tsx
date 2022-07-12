@@ -1,5 +1,5 @@
-import { useState, useEffect, FC } from "react";
-import { useParams } from "react-router-dom";
+import { FC } from "react";
+// import { useParams } from "react-router-dom";
 import { styled } from "@mui/material/styles";
 import {
   Container,
@@ -10,7 +10,7 @@ import {
   Avatar,
 } from "@mui/material";
 
-export const Tag = styled(Paper)(({ theme }) => ({
+const Tag = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
   ...theme.typography.body2,
   padding: theme.spacing(1),
@@ -58,7 +58,8 @@ export const LoadmapDetail: FC = () => {
         <Card sx={{ px: 2, py: 3, mb: 2 }}>
           <Typography component="h3" variant="h6">
             【STEP4】効率の良いキー入力を身に付ける
-          </Typography> <p>
+          </Typography>{" "}
+          <p>
             「ん」の入力を[xn]とすると、ミスタイプの数がかなり減ると思います。
           </p>
         </Card>

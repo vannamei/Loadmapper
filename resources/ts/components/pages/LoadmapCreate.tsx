@@ -8,7 +8,7 @@ import {
   Button,
 } from "@mui/material";
 
-export const LoadmapSummaryForm: FC = () => {
+const LoadmapSummaryForm: FC = () => {
   return (
     <>
       <TextField
@@ -35,17 +35,17 @@ const LoadmapStepForm: FC = () => {
   return <>STEPS</>;
 };
 
-type LoadmapSummary = {
-  title: string;
-  desc: string;
-};
+// type LoadmapSummary = {
+//   title: string;
+//   desc: string;
+// };
 
-const LoadmapCreate: FC = () => {
+export const LoadmapCreate: FC = () => {
   const [activeStep, setActiveStep] = useState(0);
-  const [loadmap, setLoadmap] = useState<LoadmapSummary>({
-    title: "",
-    desc: "",
-  });
+  // const [loadmap, setLoadmap] = useState<LoadmapSummary>({
+  //   title: "",
+  //   desc: "",
+  // });
 
   const handleNext = () => {
     setActiveStep(activeStep + 1);

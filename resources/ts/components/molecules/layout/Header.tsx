@@ -4,14 +4,14 @@ import { Link } from "react-router-dom";
 import { AppBar, IconButton, Toolbar } from "@mui/material";
 import { Menu as MenuIcon } from "@mui/icons-material";
 
-import { LogoImg } from "@img/loadmappers_logo.svg";
+import LogoImg from "@img/loadmappers_logo.svg";
 
 type Props = {
   drawerWidth: number;
   handleDrawerToggle: () => void;
 };
 
-const Header: FC<Props> = (props) => {
+export const Header: FC<Props> = (props) => {
   const { drawerWidth, handleDrawerToggle } = props;
 
   return (
@@ -39,5 +39,3 @@ const Header: FC<Props> = (props) => {
     </AppBar>
   );
 };
-
-export default Header;

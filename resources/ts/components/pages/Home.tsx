@@ -11,7 +11,7 @@ import {
   Avatar,
 } from "@mui/material";
 
-export const Tag = styled(Paper)(({ theme }) => ({
+const Tag = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
   ...theme.typography.body2,
   padding: theme.spacing(1),
@@ -64,7 +64,7 @@ const recents = [
   },
 ];
 
-const Home: FC = () => {
+export const Home: FC = () => {
   return (
     <Container maxWidth="lg" sx={{ my: { xs: 8, sm: 10 } }}>
       <Typography paragraph>
