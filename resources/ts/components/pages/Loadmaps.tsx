@@ -95,8 +95,8 @@ export const Loadmaps: FC = () => {
                 {recent.author}
               </Stack>
               <Stack direction="row" spacing={1}>
-                {recent.tags.map((tag) => (
-                  <Tag>{tag}</Tag>
+                {recent.tags.map((tag, index) => (
+                  <Tag key={index}>{tag}</Tag>
                 ))}
               </Stack>
             </Card>

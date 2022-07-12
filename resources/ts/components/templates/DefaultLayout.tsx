@@ -1,9 +1,8 @@
-import { StrictMode, FC } from "react";
+import { FC } from "react";
 import { Outlet } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { isVisibleDrawerState } from "../../store/isVisibleDrawerState";
 
-import { Header } from "../molecules/layout/Header";
 import { ResponsiveDrawer } from "../../components/organisms/ResponsiveDrawer";
 import { Footer } from "../molecules/layout/Footer";
 
@@ -28,13 +27,9 @@ export const DefaultLayout: FC<Props> = (props) => {
   };
 
   return (
-    <StrictMode>
+    <>
       <CssBaseline />
       <Box sx={{ display: "flex" }}>
-        <Header
-          drawerWidth={drawerWidth}
-          handleDrawerToggle={handleDrawerToggle}
-        />
         <ResponsiveDrawer
           drawerWidth={drawerWidth}
           container={container}
@@ -57,6 +52,6 @@ export const DefaultLayout: FC<Props> = (props) => {
         </Box>
       </Box>
       <Footer />
-    </StrictMode>
+    </>
   );
 };
