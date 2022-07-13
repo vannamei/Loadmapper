@@ -4,20 +4,15 @@ import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
 const isDev = process.env["NODE_ENV"] === "development";
 
-const fileName = {
-  output: isDev ? "[name]" : "[name].[chunkhash]",
-  asset: isDev ? "[name]" : "[contenthash]",
-};
-
 const config: Configuration = {
   mode: isDev ? "development" : "production",
   entry: {
     main: "./resources/ts/index.tsx",
   },
   output: {
-    filename: `js/${fileName.output}.js`,
+    filename: `js/main.js`,
     path: path.resolve(__dirname, "public"),
-    assetModuleFilename: fileName.asset,
+    assetModuleFilename: "[name]",
   },
   module: {
     rules: [
@@ -65,14 +60,14 @@ const config: Configuration = {
         test: /\.(png|jpe?g|gif|svg)$/i,
         type: "asset/resource",
         generator: {
-          filename: `img/${fileName.asset}[ext]`,
+          filename: `img/[name][ext]`,
         },
       },
     ],
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: `css/${fileName.output}.css`,
+      filename: `css/main.css`,
     }),
     new ProvidePlugin({
       jQuery: "jquery",
